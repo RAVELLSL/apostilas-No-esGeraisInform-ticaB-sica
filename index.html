@@ -254,12 +254,18 @@ td {
     </style>
     <script>
         function mostrarConteudo(id) {
+            // Esconder todos os elementos com a classe 'conteudo'
             document.querySelectorAll('.conteudo').forEach(function(el) {
                 el.style.display = 'none';
             });
+            // Mostrar o conteúdo com o ID correspondente
             document.getElementById(id).style.display = 'block';
+            
+            // Garantir que a coluna 2 role para o topo após exibir o conteúdo
+            document.querySelector('.coluna2').scrollTop = 0;
         }
     </script>
+    
 </head>
 <body>
     <div class="container">
